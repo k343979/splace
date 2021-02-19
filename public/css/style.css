@@ -1,0 +1,718 @@
+@charset "utf-8";
+
+/* リセットcss */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+body {
+  line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+
+nav ul {
+  list-style:none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  letter-spacing: 0.1em;
+}
+
+p {
+  letter-spacing: 0.1em;
+}
+
+button {
+  letter-spacing: 0.1em;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color:#ff9;
+  color:#000;
+  font-style:italic;
+  font-weight:bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+input, select {
+  vertical-align:middle;
+}
+/* ここまでリセットcss */
+
+
+/* header component */
+header {
+  width: 100%;
+  background-color: rgb(3, 83, 129);
+}
+
+header > div {
+  padding: 2% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 1.8em;
+  color: #fff;
+}
+
+
+/* home blade */
+.home {
+  width: 100%;
+}
+
+
+/* top area in home blade */
+.top {
+  width: 100%;
+  margin: 2% 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.top-logo {
+  width: 80%;
+  margin: 3% 10%;
+  text-align: center;
+  font-size: 3em;
+  color:rgb(3, 83, 129);
+  font-family: "Noto Serif JP", serif;
+}
+
+.top-text {
+  font-size: 1.1em;
+  color: rgb(3, 83, 129);
+  font-family: "Noto Serif JP", serif;
+}
+
+
+/* search area in home blade */
+.search {
+  width: 100%;
+  margin: 3% 0;
+}
+
+.search-block {
+  width: 50%;
+  margin: 0 25%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-block > input {
+  width: 80%;
+  padding: 1%;
+  display: block;
+  border-color: rgb(3, 83, 129);
+  border-radius: 5px;
+}
+
+.search-block > button {
+  padding: 1% 4%;
+  font-size: 1em;
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  border-color: rgb(3, 83, 129);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-block > button:hover {
+  color: rgb(3, 83, 129);
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.search-result {
+  width: 100%;
+  margin: 5% 0;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.search-result-number {
+  width: 80%;
+  margin: 0 10% 3%;
+}
+
+.search-result-number > p {
+  font-size: 1.5em;
+  font-family: "Noto Serif JP", serif;
+  padding: 0.5em 0.75em; /*上下 左右の余白*/
+  color: #494949; /*文字色*/
+  background: transparent; /*背景透明に*/
+  border-left: solid 5px #7db4e6; /*左線*/
+}
+
+.search-result-area {
+  width: 100%;
+  margin: 2% 0;
+}
+
+.search-result-container {
+  width: 80%;
+  margin: 0 10% 2%;
+  border: 1px solid rgb(3, 83, 129);
+}
+
+.search-result-name {
+  width: 94%;
+  margin: 0 3%;
+  padding: 2% 0;
+  color: #555;
+  font-size: 1.4em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.search-result-block {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid rgb(3, 83, 129);
+}
+
+.search-result-thumbnail {
+  width: 30%;
+  display: block;
+}
+
+.search-result-content {
+  width: 70%;
+  padding: 2% 2%;
+  color: #555;
+  position: relative;
+}
+
+.search-result-text {
+  padding: 0 0 3%;
+  font-size: 1em;
+  line-height: 2em;
+}
+
+.search-result-detail {
+  width: 50%;
+  margin: 0 0 1% 0;
+  display: flex;
+  bottom: 7%;
+  position: absolute;
+}
+
+.search-result-detail > p {
+  margin: 0 4%;
+  font-size: 0.8em;
+  color: #494949;
+  font-family: "Noto Serif JP", serif;
+}
+
+.search-result-content > form > button {
+  padding: 1%;
+  color: rgb(3, 83, 129);
+  border: none;
+  border-bottom: 1px solid rgb(3, 83, 129);
+  background-color: transparent;
+  cursor: pointer;
+  bottom: 7%;
+  right: 5%;
+  position: absolute;
+}
+
+.search-result-content > form > button:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+
+/* detail blade */
+.detail {
+  width: 100%;
+}
+
+.detail-btn-area {
+  margin: 5% 0;
+  text-align: center;
+}
+
+.detail-btn-area > a {
+  padding: 1%;
+  color: rgb(3, 83, 129);
+  border-bottom: 1px solid rgb(3, 83, 129);
+}
+
+.detail-btn-area > a:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.detail-container {
+  width: 60%;
+  margin: 10% 20% 2%;
+}
+
+.detail-name {
+  margin: 2% 0;
+  padding: 2% 4%;
+  font-size: 1.7em;
+  color: #555;
+  font-family: "Noto Serif JP", serif;
+  border-top: 3px solid #7db4e6;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.detail-block {
+  width: 100%;
+  margin: 3% 0;
+}
+
+.detail-box {
+  width: 100%;
+  margin: 5% 0;
+}
+
+.detail-thumbnail {
+  display: block;
+  width: 100%;
+}
+
+.detail-box > p {
+  font-size: 1.3em;
+  line-height: 1.8em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.detail-logo {
+  margin: 0 0 5%;
+  font-size: 1.5em;
+  font-family: "Noto Serif JP", serif;
+  padding: 0.5em 0.75em; /*上下 左右の余白*/
+  color: #494949; /*文字色*/
+  background: transparent; /*背景透明に*/
+  border-left: solid 3px #7db4e6; /*左線*/
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.detail-box-content {
+  width: 100%;
+  padding: 0 10%;
+}
+
+.detail-comment-box {
+  width: 100%;
+  border: 1px solid rgb(3, 83, 129);
+}
+
+.detail-comment-name {
+  padding: 2% 5%;
+  color: #555;
+  font-size: 1.2em;
+  font-family: "Noto Serif JP", serif;
+  border-bottom: 1px solid rgb(3, 83, 129);
+}
+
+.detail-comment-box > p {
+  padding: 2% 5%;
+  color: #555;
+  font-size: 1em;
+  font-family: "Noto Serif JP", serif;
+  line-height: 1.3em;
+}
+
+.detail-comment-date {
+  padding: 0 2% 2% 0;
+  color: #555;
+  font-family: "Noto Serif JP", serif;
+  text-align: right;
+}
+
+
+/* pagnation style in detail blade */
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-item {
+  width: 5%;
+  padding: 1% 0;
+  border: 1px solid rgb(3, 83, 129);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-item.active {
+  color: #fff;
+  background: rgb(3, 83, 129);
+}
+
+.page-item.active > span {
+  color: #fff;
+}
+
+.page-link {
+  font-size: 1.2em;
+  color:rgb(3, 83, 129);
+  cursor: pointer;
+}
+
+.pagination-pieces {
+  width: 100%;
+  margin: 3% 0;
+  color: rgb(3, 83, 129);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* add blade */
+.add {
+  width: 100%;
+}
+
+.add-form {
+  width: 60%;
+  margin: 10% 20% 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-form-label {
+  width: 80%;
+  margin: 2.5% 10%;
+  color: #555;
+}
+
+.add-form-label > p {
+  padding: 0 0 2% 0;
+}
+
+.add-form > input {
+  width: 80%;
+  margin: 2.5% 10%;
+  padding: 1%;
+  font-size: 1em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.add-form > textarea {
+  width: 80%;
+  margin: 5% 10%;
+  padding: 1%;
+  font-size: 1em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.add-btn-area {
+  width: 80%;
+  margin: 0 10% 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.add-btn-area > form {
+  width: 100%;
+  margin: 0 0 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.add-btn-area button {
+  padding: 1% 3%;
+  font-size: 1em;
+  color: rgb(3, 83, 129);
+  border: none;
+  border-bottom: 1px solid rgb(3, 83, 129);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-btn-area button:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.add-btn-area > a {
+  padding: 1%;
+  color: rgb(3, 83, 129);
+  border-bottom: 1px solid rgb(3, 83, 129);
+}
+
+.add-btn-area > a:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+
+/* comment blade */
+.comment {
+  width: 100%;
+  margin: 5% 0 0;
+}
+
+.comment-container {
+  width: 60%;
+  margin: 10% 20% 2%;
+}
+
+.comment-logo {
+  margin: 0 0 5%;
+  font-size: 1.5em;
+  font-family: "Noto Serif JP", serif;
+  padding: 0.5em 0.75em; /*上下 左右の余白*/
+  color: #494949; /*文字色*/
+  background: transparent; /*背景透明に*/
+  border-left: solid 3px #7db4e6; /*左線*/
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.comment-form {
+  width: 60%;
+  margin: 0 20% 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comment-form > input {
+  width: 100%;
+  margin: 2.5% 0;
+  padding: 1%;
+  font-size: 1em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.comment-form > textarea {
+  width: 100%;
+  margin: 5% 0;
+  padding: 1%;
+  font-size: 1.2em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.comment-btn-area {
+  width: 80%;
+  margin: 0 10% 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-btn-area > form {
+  width: 100%;
+  margin: 0 0 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-btn-area button {
+  padding: 1% 3%;
+  font-size: 1.2em;
+  color: rgb(3, 83, 129);
+  border: none;
+  border-bottom: 1px solid rgb(3, 83, 129);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.comment-btn-area button:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.comment-btn-area a {
+  padding: 1%;
+  color: rgb(3, 83, 129);
+  border-bottom: 1px solid rgb(3, 83, 129);
+}
+
+.comment-btn-area a:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+
+/* finish blade */
+.finish {
+  width: 100%;
+  margin: 5% 0;
+}
+
+.finish-container {
+  width: 60%;
+  margin: 10% 20% 5%;
+  border: 2px solid rgb(3, 83, 129);
+}
+
+.finish-logo-label {
+  width: 100%;
+  padding: 3% 0;
+  background: rgb(3, 83, 129);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finish-logo {
+  color: #fff;
+  font-size: 1.5em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.finish-content {
+  width: 100%;
+  margin: 5% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.finish-content > p {
+  width: 100%;
+  padding: 5% 0 0;
+  color: #555;
+  font-size: 1.3em;
+  font-family: "Noto Serif JP", serif;
+  text-align: center;
+}
+
+.finish-content > a {
+  margin: 10% 0 5%;
+  padding: 2%;
+  color: rgb(3, 83, 129);
+  border-bottom: 1px solid rgb(3, 83, 129);
+  display: block;
+}
+
+.finish-content > a:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.finish-btn-area {
+  width: 60%;
+  margin: 0 20% 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.finish-btn-area > a {
+  padding: 1%;
+  color: rgb(3, 83, 129);
+  border-bottom: 1px solid rgb(3, 83, 129);
+}
+
+.finish-btn-area a:hover {
+  color: #fff;
+  background-color: rgb(3, 83, 129);
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+
+/* footer blade */
+footer {
+  width: 100%;
+  padding: 1% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(3, 83, 129);
+}
+
+footer > p {
+  font-size: 1em;
+  color: #fff;
+}
